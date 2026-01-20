@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "netflixgpt-eff89"
-  }
+    "default": "moviqs-2e707"
+  },
+  "targets": {},
+  "etags": {}
 }
