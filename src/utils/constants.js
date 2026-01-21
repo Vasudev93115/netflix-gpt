@@ -16,3 +16,6 @@ export const Supported_GPT_Languages = [
   { code: "german", label: "German" },
   { code: "japanese", label: "Japanese" },
 ];
+
+export const OpenAiApiKey = "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";
+export const Ai_Model = "llama-3.1-8b-instant";
