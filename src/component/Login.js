@@ -79,54 +79,81 @@ const Login = () => {
 
   return (
     <div>
-      <Header />
-      <div className="absolute">
-        <img
-          src="https://raw.githubusercontent.com/Vasudev93115/netflix-gpt/refs/heads/main/src/utils/assets/background%20(2).png"
-          alt="Logo"
-        />
-      </div>
-      <form
-        onSubmit={(e) => e.preventDefault()}
-        className="w-3/12 text-xl absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
-      >
-        <h1 className="font-bold text-3xl py-4">
-          {isSignInForm ? "Sign In" : "Sign-Up"}
-        </h1>
-        {!isSignInForm && (
-          <input
-            ref={name}
-            type="text"
-            placeholder="Full Name"
-            className="p-4 my-4 w-full bg-gray-700 rounded-lg"
-          />
-        )}
-        <input
-          ref={email}
-          type="text"
-          placeholder="Email Address"
-          className="p-4 my-4 w-full bg-gray-700 rounded-lg"
-        />
-        <input
-          ref={password}
-          type="password"
-          placeholder="Password"
-          className="p-4 my-4 w-full bg-gray-700 rounded-lg"
-        />
-        <p className="text-red-500 font-bold">{errorMessage}</p>
-        <button
-          className="p-4 my-6 bg-purple-700 w-full rounded-lg hover:bg-purple-800 font-bold"
-          onClick={handleButtonClick}
-        >
-          {isSignInForm ? "Sign In" : "Sign-Up"}
-        </button>
-        <p className="py-4 cursor-pointer" onClick={toggleSignInForm}>
-          {isSignInForm
-            ? "New here? Create an account"
-            : "Already registered? Sign-In Now."}
-        </p>
-      </form>
-    </div>
+  <Header />
+
+  {/* Background */}
+  <div className="fixed inset-0 -z-10">
+    <img
+      src="https://raw.githubusercontent.com/Vasudev93115/netflix-gpt/refs/heads/main/src/utils/assets/background%20(2).png"
+      alt="background"
+      className="w-full h-full object-cover"
+    />
+  </div>
+
+  {/* Login Form */}
+  <form
+    onSubmit={(e) => e.preventDefault()}
+    className="
+      w-[90%] sm:w-[70%] md:w-3/12
+      text-base sm:text-lg
+      absolute
+      p-6 sm:p-10 md:p-12
+      bg-black
+      my-28 sm:my-32
+      mx-auto
+      right-0 left-0
+      text-white
+      rounded-lg
+      bg-opacity-80
+    "
+  >
+    <h1 className="font-bold text-2xl sm:text-3xl py-4">
+      {isSignInForm ? "Sign In" : "Sign-Up"}
+    </h1>
+
+    {!isSignInForm && (
+      <input
+        ref={name}
+        type="text"
+        placeholder="Full Name"
+        className="p-3 sm:p-4 my-3 sm:my-4 w-full bg-gray-700 rounded-lg text-sm sm:text-base"
+      />
+    )}
+
+    <input
+      ref={email}
+      type="text"
+      placeholder="Email Address"
+      className="p-3 sm:p-4 my-3 sm:my-4 w-full bg-gray-700 rounded-lg text-sm sm:text-base"
+    />
+
+    <input
+      ref={password}
+      type="password"
+      placeholder="Password"
+      className="p-3 sm:p-4 my-3 sm:my-4 w-full bg-gray-700 rounded-lg text-sm sm:text-base"
+    />
+
+    <p className="text-red-500 font-bold text-sm">{errorMessage}</p>
+
+    <button
+      className="p-3 sm:p-4 my-5 sm:my-6 bg-purple-700 w-full rounded-lg hover:bg-purple-800 font-bold text-sm sm:text-base"
+      onClick={handleButtonClick}
+    >
+      {isSignInForm ? "Sign In" : "Sign-Up"}
+    </button>
+
+    <p
+      className="py-3 sm:py-4 cursor-pointer text-sm sm:text-base text-gray-300 hover:underline"
+      onClick={toggleSignInForm}
+    >
+      {isSignInForm
+        ? "New here? Create an account"
+        : "Already registered? Sign-In Now."}
+    </p>
+  </form>
+</div>
+
   );
 };
 

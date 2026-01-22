@@ -10,23 +10,26 @@ import { useSelector } from "react-redux";
 
 const Browse = () => {
   const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
+
   useNowPlayingMovies();
   usePopularMovies();
   useTopRatedMovies();
   useUpcomingMovies();
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
+    <div className="relative min-h-screen overflow-x-hidden bg-black">
       <Header />
-      {showGptSearch ? (
-        <GPTSearch />
-      ) : (
-        <>
-      <MainContainer />
-      <SecondaryContainer />
-      </>
-      )}
-      
+
+      <div className="pt-14 sm:pt-16 md:pt-20">
+        {showGptSearch ? (
+          <GPTSearch />
+        ) : (
+          <>
+            <MainContainer />
+            <SecondaryContainer />
+          </>
+        )}
+      </div>
     </div>
   );
 };
